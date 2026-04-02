@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ivoes Page | Donation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Ivoes Page</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="donation.html">Donation</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="homes.html">Homes</a></li>
+        <li><a href="smog.html">Smog</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="kicker">Support</p>
+        <h1>Donation options to support your work.</h1>
+        <p>
+          You can use this page for one-time or recurring support. Keep links blank until your
+          payment platforms are ready.
+        </p>
+      </div>
+      <aside class="hero-panel reveal">
+        <h2>Why Donate</h2>
+        <ul>
+          <li>Fund tools, hosting, and development time.</li>
+          <li>Help expand products and community support.</li>
+          <li>Support local services and customer care.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section>
+      <h2 class="section-title">Donation Management</h2>
+      <div class="grid">
+        <article class="card reveal">
+          <h3>Centralized Content File</h3>
+          <p>All donation links now appear only in the footer and are managed in assets/js/content.js.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Expandable Setup</h3>
+          <p>Add new donation platforms by inserting another item in the donations array.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Icon-Based Links</h3>
+          <p>Each donation platform displays as a website icon instead of a text URL.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <div class="footer-link-groups">
+        <section class="footer-group">
+          <h3>Social</h3>
+          <div class="footer-icon-list" data-links="social"></div>
+        </section>
+        <section class="footer-group">
+          <h3>Donations</h3>
+          <div class="footer-icon-list" data-links="donations"></div>
+        </section>
+      </div>
+      <p class="copyright" data-content="site.copyright">Copyright 2026 Ivoes Page. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
