@@ -15,12 +15,27 @@ window.SITE_CONTENT = {
         url: "https://github.com/MrIvoe/Simple-Fences-Plugins",
       },
       {
-        name: "Add Another Repository",
-        description: "Duplicate this object to add more repositories globally.",
+        name: "Chrome New Tab Home Page",
+        description: "This is just to simplify our lives of thousands of links to keep what we really need at a click away.",
         url: "",
       },
     ],
     social: [
+      {
+        name: "Linkedin",
+        url: "https://www.Linkedin.com/ivoe",
+        site: "linkedin.com",
+      },
+      {
+        name: "Facebook",
+        url: "https://www.Facebook.com/ivoe_",
+        site: "Facebook.com",
+      },
+      {
+        name: "Github",
+        url: "https://www.Github.com/MrIvoe",
+        site: "Github.com",
+      },
       {
         name: "Instagram",
         url: "https://www.instagram.com/_ivoe_/",
@@ -34,40 +49,44 @@ window.SITE_CONTENT = {
     ],
     donations: [
       {
-        name: "PayPal",
-        url: "",
-        site: "paypal.com",
+        name: "Ko-fi",
+        url: "https://ko-fi.com/mrivoe",
+        site: "ko-fi.com",
       },
       {
-        name: "Cash App",
-        url: "",
-        site: "cash.app",
+        name: "patreon",
+        url: "https://www.patreon.com/c/Ivoe",
+        site: "patreon.com",
       },
     ],
   },
   about: {
     kicker: "About",
-    title: "Tell your story with confidence and clarity.",
+    title: "Joshua Leon Ivoe — California.",
     description:
-      "Use this page to explain who you are, what services you provide, and the value you bring. Replace this text from assets/js/content.js.",
+      "My name is Joshua Leon Ivoe, and I'm just a regular guy from Hesperia, California building a life around family, work, and the things I enjoy learning. I'm a husband, a dad to three kids, and a big part of what I do is really just about creating a better future for my family.",
     highlights: [
-      "Years of experience: Add your number.",
-      "Primary industries: Add your focus areas.",
-      "Service region: Add your city or state.",
-      "Best way to contact: Add your preferred channel.",
+      "Husband and father of three.",
+      "Smog inspector with hands-on inspection experience.",
+      "Coding projects — experimenting and building real things.",
+      "Studying toward my real estate license.",
     ],
     cards: [
       {
-        title: "Mission",
-        text: "Write a one-paragraph mission statement that defines your purpose.",
+        title: "Work and Inspections",
+        text: "I stay grounded in real-world work through smog inspections and practical hands-on experience. I like understanding how things work and finding better ways to do them.",
       },
       {
-        title: "Vision",
-        text: "Describe where you want your business and brand to grow over time.",
+        title: "Coding and Building",
+        text: "Coding has become one of the big things I enjoy because it lets me create, experiment, and keep improving. I like working on projects, testing ideas, and building things that are useful or just interesting to me.",
       },
       {
-        title: "Commitment",
-        text: "List what customers and clients can consistently expect from you.",
+        title: "Real Estate Learning",
+        text: "I have been working to achive a Real Estate Agent license, i already completed my course work and just need to study and take my final exam.",
+      },
+      {
+        title: "Family First",
+        text: "This page is really just a place to share who I am, what I do, and what I'm building. Family comes first for me, and everything else — work, coding, learning, and future goals — is part of that bigger picture.",
       },
     ],
   },
