@@ -425,6 +425,7 @@ function renderDonationPage() {
 
     article.appendChild(title);
     article.appendChild(text);
+    article.appendChild(createActionElement(item.url, item.label, "Visit"));
     infoContainer.appendChild(article);
     observeRevealItem(article);
   });

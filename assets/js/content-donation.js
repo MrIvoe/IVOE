@@ -3,7 +3,7 @@ window.PAGE_CONTENT = {
     kicker: "Support",
     title: "Support the work through a donation.",
     description:
-      "Every contribution helps fund tools, hosting, and future development.",
+      "Every contribution helps fund tools, hosting, and future development. One-time and recurring options are available through the platforms below.",
     panelTitle: "Why Donate",
     panelItems: [
       "Fund tools, hosting, and development time.",
@@ -11,19 +11,19 @@ window.PAGE_CONTENT = {
       "Support local services and customer care.",
     ],
   },
-  sectionTitle: "Donation Channels",
+  sectionTitle: "Donation Platforms",
   infoCards: [
     {
-      title: "Icon-Based Links",
-      text: "Each platform appears as a branded icon in the footer on every page of the site.",
+      title: "Ko-fi",
+      text: "Send a one-time contribution or set up a monthly support on Ko-fi. No account required for one-time gifts.",
+      url: "https://ko-fi.com/mrivoe",
+      label: "Support on Ko-fi",
     },
     {
-      title: "Add a Platform",
-      text: "Insert a new object in the donations array inside assets/js/content.js to add any platform.",
-    },
-    {
-      title: "Current Platforms",
-      text: "Ko-fi and Patreon are currently connected. Add PayPal, Cash App, or others anytime.",
+      title: "Patreon",
+      text: "Join as a patron for ongoing monthly support. Patreon members get first access to updates and new content.",
+      url: "https://www.patreon.com/c/Ivoe",
+      label: "Join on Patreon",
     },
   ],
 };
