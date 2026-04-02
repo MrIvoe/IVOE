@@ -1,9 +1,9 @@
 window.PAGE_CONTENT = {
   hero: {
     kicker: "Welcome",
-    title: "A hub for work, business, and the things I am building.",
+    title: "Ivoe's Work website.",
     description:
-      "Find my repositories, social pages, homes for sale, smog services, donation options, and online shop all from one place.",
+      "All the services and products offered by myself and the places I work at.",
     panelTitle: "What Is Here",
     panelItems: [
       "Repositories",
@@ -21,18 +21,17 @@ window.PAGE_CONTENT = {
       url: "smog.html",
       label: "Open Smog",
     },
-
-    {
-      title: "Online Shop",
-      description: "Products and services available for purchase.",
-      url: "shop.html",
-      label: "Open Shop",
-    },
     {
       title: "Homes For Sale",
       description: "Current real estate listings with price and details.",
       url: "homes.html",
       label: "Open Homes",
+    },
+    {
+      title: "Online Shop",
+      description: "Products and services available for purchase.",
+      url: "shop.html",
+      label: "Open Shop",
     },
     {
       title: "Donation",
