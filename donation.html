@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
+<body data-page="donation">
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html">Ivoes Page</a>
@@ -27,39 +27,19 @@
   <main class="container">
     <section class="hero">
       <div>
-        <p class="kicker">Support</p>
-        <h1>Donation options to support your work.</h1>
-        <p>
-          You can use this page for one-time or recurring support. Keep links blank until your
-          payment platforms are ready.
-        </p>
+        <p class="kicker" data-page-content="hero.kicker"></p>
+        <h1 data-page-content="hero.title"></h1>
+        <p data-page-content="hero.description"></p>
       </div>
       <aside class="hero-panel reveal">
-        <h2>Why Donate</h2>
-        <ul>
-          <li>Fund tools, hosting, and development time.</li>
-          <li>Help expand products and community support.</li>
-          <li>Support local services and customer care.</li>
-        </ul>
+        <h2 data-page-content="hero.panelTitle"></h2>
+        <ul data-section="panel-items"></ul>
       </aside>
     </section>
 
     <section>
-      <h2 class="section-title">Donation Management</h2>
-      <div class="grid">
-        <article class="card reveal">
-          <h3>Centralized Content File</h3>
-          <p>All donation links now appear only in the footer and are managed in assets/js/content.js.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Expandable Setup</h3>
-          <p>Add new donation platforms by inserting another item in the donations array.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Icon-Based Links</h3>
-          <p>Each donation platform displays as a website icon instead of a text URL.</p>
-        </article>
-      </div>
+      <h2 class="section-title" data-page-content="sectionTitle"></h2>
+      <div class="grid" data-section="donation-info"></div>
     </section>
   </main>
 
@@ -79,6 +59,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/content-donation.js"></script>
   <script src="assets/js/content.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

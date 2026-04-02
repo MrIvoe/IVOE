@@ -27,40 +27,19 @@
   <main class="container">
     <section class="hero">
       <div>
-        <p class="kicker" data-content="about.kicker">About</p>
-        <h1 data-content="about.title">Tell your story with confidence and clarity.</h1>
-        <p data-content="about.description">
-          Use this page to explain who you are, what services you provide, and the value you bring.
-          Replace the content below with your personal or business profile.
-        </p>
+        <p class="kicker" data-page-content="kicker"></p>
+        <h1 data-page-content="title"></h1>
+        <p data-page-content="description"></p>
       </div>
       <aside class="hero-panel reveal">
-        <h2>Profile Highlights</h2>
-        <ul data-about="highlights">
-          <li>Years of experience: Add your number.</li>
-          <li>Primary industries: Add your focus areas.</li>
-          <li>Service region: Add your city or state.</li>
-          <li>Best way to contact: Add your preferred channel.</li>
-        </ul>
+        <h2 data-page-content="hero.panelTitle"></h2>
+        <ul data-section="panel-items"></ul>
       </aside>
     </section>
 
     <section>
-      <h2 class="section-title">Mission and Values</h2>
-      <div class="grid" data-about="cards">
-        <article class="card reveal">
-          <h3>Mission</h3>
-          <p>Write a one-paragraph mission statement that defines your purpose.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Vision</h3>
-          <p>Describe where you want your business and brand to grow over time.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Commitment</h3>
-          <p>List what customers and clients can consistently expect from you.</p>
-        </article>
-      </div>
+      <h2 class="section-title" data-page-content="cardsTitle"></h2>
+      <div class="grid" data-about="cards"></div>
     </section>
   </main>
 
@@ -80,6 +59,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/content-about.js"></script>
   <script src="assets/js/content.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

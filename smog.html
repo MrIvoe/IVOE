@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
+<body data-page="smog">
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html">Ivoes Page</a>
@@ -27,60 +27,24 @@
   <main class="container">
     <section class="hero">
       <div>
-        <p class="kicker">Smog Services</p>
-        <h1>Show where you smog vehicles and what types you service.</h1>
-        <p>
-          Use this page to display location details, accepted vehicle categories,
-          and requirements customers should bring before inspection.
-        </p>
+        <p class="kicker" data-page-content="hero.kicker"></p>
+        <h1 data-page-content="hero.title"></h1>
+        <p data-page-content="hero.description"></p>
       </div>
       <aside class="hero-panel reveal">
-        <h2>Service Details</h2>
-        <ul>
-          <li>Business name: Add your smog station name.</li>
-          <li>Address: Add your service location.</li>
-          <li>Hours: Add open and close times.</li>
-          <li>Phone: Add your best contact number.</li>
-        </ul>
+        <h2 data-page-content="hero.panelTitle"></h2>
+        <ul data-section="panel-items"></ul>
       </aside>
     </section>
 
     <section>
-      <h2 class="section-title">Vehicles You Can Smog</h2>
-      <div class="grid">
-        <article class="card reveal">
-          <h3>Gas Vehicles</h3>
-          <p>Sedans, SUVs, and light-duty gas trucks.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Hybrid Vehicles</h3>
-          <p>Most hybrid models requiring standard inspection checks.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Fleet Accounts</h3>
-          <p>Business and commercial fleets with pre-scheduled service windows.</p>
-        </article>
-      </div>
+      <h2 class="section-title" data-page-content="vehiclesTitle"></h2>
+      <div class="grid" data-section="vehicles"></div>
     </section>
 
     <section>
-      <h2 class="section-title">Customer Information</h2>
-      <div class="grid">
-        <article class="card reveal">
-          <h3>What To Bring</h3>
-          <p>Registration paperwork, vehicle keys, and identification.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Appointment Link</h3>
-          <p>Use this card for online scheduling when available.</p>
-          <a class="link-placeholder" href="">Add Appointment Link</a>
-        </article>
-        <article class="card reveal">
-          <h3>Directions Link</h3>
-          <p>Use this card for Google Maps or Apple Maps location routing.</p>
-          <a class="link-placeholder" href="">Add Directions Link</a>
-        </article>
-      </div>
+      <h2 class="section-title" data-page-content="customerTitle"></h2>
+      <div class="grid" data-section="customer-info"></div>
     </section>
   </main>
 
@@ -100,6 +64,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/content-smog.js"></script>
   <script src="assets/js/content.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

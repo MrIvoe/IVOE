@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
+<body data-page="home">
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html">Ivoes Page</a>
@@ -28,70 +28,24 @@
   <main class="container">
     <section class="hero">
       <div>
-        <p class="kicker">Welcome</p>
-        <h1>Professional web presence for your work, business, and services.</h1>
-        <p>
-          This site is structured for GitHub hosting and built to promote your repositories,
-          social media pages, homes for sale, smog services, donation support, and online shop.
-          Every external link is intentionally left empty until you enter your real URLs.
-        </p>
+        <p class="kicker" data-page-content="hero.kicker"></p>
+        <h1 data-page-content="hero.title"></h1>
+        <p data-page-content="hero.description"></p>
       </div>
       <aside class="hero-panel reveal">
-        <h2>Quick Setup Checklist</h2>
-        <ul>
-          <li>Add your GitHub repository links in the Repositories section.</li>
-          <li>Add your social profile links in the Social section.</li>
-          <li>Update product, home listing, and smog details as needed.</li>
-          <li>Deploy with GitHub Pages.</li>
-        </ul>
+        <h2 data-page-content="hero.panelTitle"></h2>
+        <ul data-section="panel-items"></ul>
       </aside>
     </section>
 
     <section>
-      <h2 class="section-title">Featured Repositories</h2>
+      <h2 class="section-title" data-page-content="reposTitle"></h2>
       <div class="grid" data-home="repositories"></div>
     </section>
 
     <section>
-      <h2 class="section-title">Social and Donation Links</h2>
-      <article class="card reveal">
-        <h3>Managed From One File</h3>
-        <p>
-          Social and donation links now live only in the footer and are controlled from
-          <strong>assets/js/content.js</strong> so updates apply across every page.
-        </p>
-      </article>
-    </section>
-
-    <section>
-      <h2 class="section-title">Business Sections</h2>
-      <div class="grid">
-        <article class="card reveal">
-          <h3>About Page</h3>
-          <p>Share your background, mission, and service values.</p>
-          <a href="about.html">Open About</a>
-        </article>
-        <article class="card reveal">
-          <h3>Donation Page</h3>
-          <p>Let supporters contribute through donation options you choose.</p>
-          <a href="donation.html">Open Donation</a>
-        </article>
-        <article class="card reveal">
-          <h3>Online Shop</h3>
-          <p>List products and services that generate income from purchases.</p>
-          <a href="shop.html">Open Shop</a>
-        </article>
-        <article class="card reveal">
-          <h3>Homes For Sale</h3>
-          <p>Maintain active home listings with price, details, and status.</p>
-          <a href="homes.html">Open Homes</a>
-        </article>
-        <article class="card reveal">
-          <h3>Smog Services</h3>
-          <p>Show service location, supported vehicles, and appointment details.</p>
-          <a href="smog.html">Open Smog</a>
-        </article>
-      </div>
+      <h2 class="section-title" data-page-content="businessTitle"></h2>
+      <div class="grid" data-section="business-cards"></div>
     </section>
   </main>
 
@@ -111,6 +65,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/content-home.js"></script>
   <script src="assets/js/content.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

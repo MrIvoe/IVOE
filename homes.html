@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
+<body data-page="homes">
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html">Ivoes Page</a>
@@ -27,25 +27,18 @@
   <main class="container">
     <section class="hero">
       <div>
-        <p class="kicker">Homes For Sale</p>
-        <h1>List available homes with key details and contact options.</h1>
-        <p>
-          Use this page to publish current property listings. Update location, price,
-          and property highlights for each home.
-        </p>
+        <p class="kicker" data-page-content="hero.kicker"></p>
+        <h1 data-page-content="hero.title"></h1>
+        <p data-page-content="hero.description"></p>
       </div>
       <aside class="hero-panel reveal">
-        <h2>Listing Notes</h2>
-        <ul>
-          <li>Add bedrooms, bathrooms, and square footage.</li>
-          <li>Include neighborhood or school district highlights.</li>
-          <li>Attach your listing or contact page links when ready.</li>
-        </ul>
+        <h2 data-page-content="hero.panelTitle"></h2>
+        <ul data-section="panel-items"></ul>
       </aside>
     </section>
 
     <section>
-      <h2 class="section-title">Current Listings</h2>
+      <h2 class="section-title" data-page-content="listingsTitle"></h2>
       <div class="table-wrap reveal">
         <table>
           <thead>
@@ -57,29 +50,7 @@
               <th>Listing Link</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>123 Main St</td>
-              <td>$000,000</td>
-              <td>3 Bed, 2 Bath, 1,800 sqft</td>
-              <td>Available</td>
-              <td><a class="link-placeholder" href="">Add Listing Link</a></td>
-            </tr>
-            <tr>
-              <td>456 Oak Ave</td>
-              <td>$000,000</td>
-              <td>4 Bed, 3 Bath, 2,300 sqft</td>
-              <td>Coming Soon</td>
-              <td><a class="link-placeholder" href="">Add Listing Link</a></td>
-            </tr>
-            <tr>
-              <td>789 Cedar Ln</td>
-              <td>$000,000</td>
-              <td>2 Bed, 2 Bath, 1,250 sqft</td>
-              <td>Available</td>
-              <td><a class="link-placeholder" href="">Add Listing Link</a></td>
-            </tr>
-          </tbody>
+          <tbody data-section="listings"></tbody>
         </table>
       </div>
     </section>
@@ -101,6 +72,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/content-homes.js"></script>
   <script src="assets/js/content.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
