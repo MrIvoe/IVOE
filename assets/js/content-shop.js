@@ -3,12 +3,12 @@ window.PAGE_CONTENT = {
     kicker: "Online Store",
     title: "Products and services available for purchase.",
     description:
-      "Browse available items below. Checkout links will be added as products become available. Edit this page from assets/js/content-shop.js.",
+      "Browse available items below. Checkout links will be added as products become available.",
     panelTitle: "Store Setup",
     panelItems: [
-      "Edit product names, prices, and descriptions here in content-shop.js.",
-      "Add a checkout URL to each product to enable the buy button.",
-      "Leave the url field empty to show a Coming Soon placeholder.",
+      "Product sold here are either my own merchandise or affiliated links.",
+      "Each purchase links helps me personally.",
+      "Content will be updated when products are available.",
     ],
   },
   productsTitle: "Products and Services",

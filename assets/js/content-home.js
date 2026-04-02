@@ -6,27 +6,22 @@ window.PAGE_CONTENT = {
       "Find my repositories, social pages, homes for sale, smog services, donation options, and online shop all from one place.",
     panelTitle: "What Is Here",
     panelItems: [
-      "Repositories — edit links in assets/js/content.js.",
-      "Homes for sale — edit listings in assets/js/content-homes.js.",
-      "Smog services — edit details in assets/js/content-smog.js.",
-      "Shop products — edit listings in assets/js/content-shop.js.",
+      "Repositories",
+      "Homes for sale",
+      "Smog services",
+      "Shop products",
     ],
   },
   reposTitle: "Featured Repositories",
   businessTitle: "Business Sections",
   businessCards: [
     {
-      title: "About Page",
-      description: "Learn more about Joshua — background, skills, and goals.",
-      url: "about.html",
-      label: "Open About",
+      title: "Smog Services",
+      description: "Smog inspection location, vehicles accepted.",
+      url: "smog.html",
+      label: "Open Smog",
     },
-    {
-      title: "Donation",
-      description: "Support through Ko-fi, Patreon, or future donation options.",
-      url: "donation.html",
-      label: "Open Donation",
-    },
+
     {
       title: "Online Shop",
       description: "Products and services available for purchase.",
@@ -40,10 +35,16 @@ window.PAGE_CONTENT = {
       label: "Open Homes",
     },
     {
-      title: "Smog Services",
-      description: "Smog inspection location, vehicles accepted.",
-      url: "smog.html",
-      label: "Open Smog",
+      title: "Donation",
+      description: "Support through Ko-fi, Patreon, or future donation options.",
+      url: "donation.html",
+      label: "Open Donation",
+    },
+    {
+      title: "About Page",
+      description: "Learn more about Joshua — background, skills, and goals.",
+      url: "about.html",
+      label: "Open About",
     },
   ],
 };

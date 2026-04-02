@@ -1,14 +1,14 @@
 window.PAGE_CONTENT = {
   hero: {
     kicker: "Homes For Sale",
-    title: "Current property listings with details and status.",
+    title: "Property listings with details and status.",
     description:
-      "Each listing below includes address, price, bedroom and bathroom count, and availability status. Edit listings from assets/js/content-homes.js.",
-    panelTitle: "Listing Notes",
+      "Each listing below includes address, price, bedroom and bathroom count, and availability status.",
+    panelTitle: "Listing Information",
     panelItems: [
-      "Add or remove listings in this file — assets/js/content-homes.js.",
-      "Set status to Available, Pending, or Coming Soon.",
-      "Leave the url field empty if no listing link is ready yet.",
+      "Listings in this file are represented by me or the company i am working for",
+      "Status allowing you to know if Available, Escrow Pending, Sold, or Coming Soon.",
+      "The links will be updated periodically the sold homes will be a part of my portfolio for future endevors.",
     ],
   },
   listingsTitle: "Current Listings",

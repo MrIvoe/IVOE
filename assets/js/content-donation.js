@@ -3,7 +3,7 @@ window.PAGE_CONTENT = {
     kicker: "Support",
     title: "Support the work through a donation.",
     description:
-      "Every contribution helps fund tools, hosting, and future development. Donation platform icons appear in the footer on every page and are managed from assets/js/content.js.",
+      "Every contribution helps fund tools, hosting, and future development.",
     panelTitle: "Why Donate",
     panelItems: [
       "Fund tools, hosting, and development time.",

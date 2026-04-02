@@ -1,9 +1,9 @@
 window.PAGE_CONTENT = {
   hero: {
     kicker: "Smog Services",
-    title: "Professional smog inspections — Hesperia, California.",
+    title: "Professional smog inspections Victorville, California.",
     description:
-      "Bringing your vehicle in for a smog inspection is straightforward. See below for accepted vehicle types, service details, and scheduling. Edit this page from assets/js/content-smog.js.",
+      "Bringing your vehicle in for a smog inspection is straightforward. See below for accepted vehicle types, service details, and scheduling.",
     panelTitle: "Service Details",
     panelItems: [
       "Business name: EcoSMOG Solutions.",
@@ -23,6 +23,10 @@ window.PAGE_CONTENT = {
       description: "2000 and newer hybrid models that require a standard OBD-II inspection check.",
     },
     {
+      title: "Clean Truck Check Inspection",
+      description: "Heavy-Duty Vehicle Inspection and Maintenance (HD I/M) program",
+    },
+    {
       title: "Fleet Accounts",
       description: "Business and commercial fleets with pre-scheduled service windows available.",
     },
@@ -39,13 +43,13 @@ window.PAGE_CONTENT = {
       title: "Book an Appointment",
       text: "Online scheduling is available when the link below is active.",
       url: "https://www.ecosmogsolutions.com/",
-      label: "Add Appointment Link",
+      label: "Appointment link",
     },
     {
       title: "Get Directions",
       text: "Tap below for Google Maps or Apple Maps routing to the service location.",
       url: "https://maps.app.goo.gl/N4G2ARrfymdpY4Vv5",
-      label: "Add Directions Link",
+      label: "Directions Link",
     },
   ],
 };
