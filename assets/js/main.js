@@ -14,12 +14,22 @@ const observer = new IntersectionObserver(
   }
 );
 
-revealItems.forEach((item, index) => {
-  item.style.transitionDelay = `${index * 70}ms`;
+function observeRevealItem(item) {
+  item.style.transitionDelay = `${revealCounter * 70}ms`;
+  revealCounter += 1;
+  observer.observe(item);
+}
+
+let revealCounter = 0;
+
+revealItems.forEach((item) => {
+  item.style.transitionDelay = `${revealCounter * 70}ms`;
+  revealCounter += 1;
   observer.observe(item);
 });
 
 const content = window.SITE_CONTENT || {};
+const pageContent = window.PAGE_CONTENT || {};
 
 function getNestedValue(obj, path) {
   return path.split(".").reduce((acc, key) => {
@@ -37,7 +47,23 @@ function applyTextContent() {
     if (!path) {
       return;
     }
+
     const value = getNestedValue(content, path);
+    if (typeof value === "string") {
+      node.textContent = value;
+    }
+  });
+}
+
+function applyPageTextContent() {
+  const textNodes = document.querySelectorAll("[data-page-content]");
+  textNodes.forEach((node) => {
+    const path = node.getAttribute("data-page-content");
+    if (!path) {
+      return;
+    }
+
+    const value = getNestedValue(pageContent, path);
     if (typeof value === "string") {
       node.textContent = value;
     }
@@ -98,6 +124,40 @@ function createIconElement(item) {
   return disabled;
 }
 
+function createActionElement(url, label, fallbackLabel) {
+  if (url) {
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = url.startsWith("http") ? "_blank" : "_self";
+    if (link.target === "_blank") {
+      link.rel = "noopener noreferrer";
+    }
+    link.textContent = label || fallbackLabel;
+    return link;
+  }
+
+  const placeholder = document.createElement("span");
+  placeholder.className = "button link-placeholder";
+  placeholder.textContent = fallbackLabel;
+  return placeholder;
+}
+
+function renderPanelItems() {
+  const panelContainer = document.querySelector("[data-section='panel-items']");
+  if (!panelContainer) {
+    return;
+  }
+
+  const items = (pageContent.hero && pageContent.hero.panelItems) || [];
+  panelContainer.innerHTML = "";
+
+  items.forEach((line) => {
+    const li = document.createElement("li");
+    li.textContent = line;
+    panelContainer.appendChild(li);
+  });
+}
+
 function renderHomeRepositories() {
   const repoContainer = document.querySelector("[data-home='repositories']");
   if (!repoContainer) {
@@ -120,23 +180,10 @@ function renderHomeRepositories() {
 
     article.appendChild(heading);
     article.appendChild(text);
-
-    if (repo.url) {
-      const link = document.createElement("a");
-      link.href = repo.url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.textContent = "Open Repository";
-      article.appendChild(link);
-    } else {
-      const placeholder = document.createElement("span");
-      placeholder.className = "button link-placeholder";
-      placeholder.textContent = "Add Repository Link";
-      article.appendChild(placeholder);
-    }
+    article.appendChild(createActionElement(repo.url, repo.label, "Open Repository"));
 
     repoContainer.appendChild(article);
-    observer.observe(article);
+    observeRevealItem(article);
   });
 }
 
@@ -166,28 +213,179 @@ function renderFooterIcons() {
   }
 }
 
-function renderAboutPage() {
-  if (document.body.getAttribute("data-page") !== "about") {
+function renderHomePage() {
+  const cardsContainer = document.querySelector("[data-section='business-cards']");
+  if (!cardsContainer) {
     return;
   }
 
-  const highlightsContainer = document.querySelector("[data-about='highlights']");
-  const cardsContainer = document.querySelector("[data-about='cards']");
-  const highlights = (content.about && content.about.highlights) || [];
-  const cards = (content.about && content.about.cards) || [];
+  const cards = pageContent.businessCards || [];
+  cardsContainer.innerHTML = "";
 
-  if (highlightsContainer) {
-    highlightsContainer.innerHTML = "";
-    highlights.forEach((line) => {
-      const li = document.createElement("li");
-      li.textContent = line;
-      highlightsContainer.appendChild(li);
+  cards.forEach((item) => {
+    const article = document.createElement("article");
+    article.className = "card reveal";
+
+    const title = document.createElement("h3");
+    title.textContent = item.title;
+
+    const text = document.createElement("p");
+    text.textContent = item.description;
+
+    article.appendChild(title);
+    article.appendChild(text);
+    article.appendChild(createActionElement(item.url, item.label, "Open Section"));
+    cardsContainer.appendChild(article);
+    observeRevealItem(article);
+  });
+}
+
+function renderAboutPage() {
+  const cardsContainer = document.querySelector("[data-about='cards']");
+  if (!cardsContainer) {
+    return;
+  }
+
+  const cards = pageContent.cards || [];
+  cardsContainer.innerHTML = "";
+
+  cards.forEach((item) => {
+    const article = document.createElement("article");
+    article.className = "card reveal";
+
+    const title = document.createElement("h3");
+    title.textContent = item.title;
+
+    const text = document.createElement("p");
+    text.textContent = item.text;
+
+    article.appendChild(title);
+    article.appendChild(text);
+    cardsContainer.appendChild(article);
+    observeRevealItem(article);
+  });
+}
+
+function renderEmptyCard(container, message) {
+  const notice = document.createElement("article");
+  notice.className = "card";
+  const p = document.createElement("p");
+  p.textContent = message;
+  notice.appendChild(p);
+  container.appendChild(notice);
+}
+
+function renderShopPage() {
+  const productsContainer = document.querySelector("[data-section='products']");
+  if (!productsContainer) {
+    return;
+  }
+
+  const products = pageContent.products || [];
+  productsContainer.innerHTML = "";
+
+  if (products.length === 0) {
+    renderEmptyCard(productsContainer, "No products listed yet. Add items in assets/js/content-shop.js.");
+    return;
+  }
+
+  products.forEach((item) => {
+    const article = document.createElement("article");
+    article.className = "card reveal";
+
+    const title = document.createElement("h3");
+    title.textContent = item.name;
+
+    const text = document.createElement("p");
+    text.textContent = `${item.price}. ${item.description}`;
+
+    article.appendChild(title);
+    article.appendChild(text);
+    article.appendChild(createActionElement(item.url, item.label, "Coming Soon"));
+    productsContainer.appendChild(article);
+    observeRevealItem(article);
+  });
+}
+
+function renderHomesPage() {
+  const listingsContainer = document.querySelector("[data-section='listings']");
+  if (!listingsContainer) {
+    return;
+  }
+
+  const listings = pageContent.listings || [];
+  listingsContainer.innerHTML = "";
+
+  if (listings.length === 0) {
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+    cell.setAttribute("colspan", "5");
+    cell.style.textAlign = "center";
+    cell.style.padding = "24px";
+    cell.style.color = "var(--muted)";
+    cell.textContent = "No active listings at this time.";
+    row.appendChild(cell);
+    listingsContainer.appendChild(row);
+    return;
+  }
+
+  listings.forEach((item) => {
+    const row = document.createElement("tr");
+
+    const address = document.createElement("td");
+    address.textContent = item.address;
+
+    const price = document.createElement("td");
+    price.textContent = item.price;
+
+    const details = document.createElement("td");
+    details.textContent = item.details;
+
+    const status = document.createElement("td");
+    status.textContent = item.status;
+
+    const action = document.createElement("td");
+    action.appendChild(createActionElement(item.url, item.label, "Add Listing Link"));
+
+    row.appendChild(address);
+    row.appendChild(price);
+    row.appendChild(details);
+    row.appendChild(status);
+    row.appendChild(action);
+    listingsContainer.appendChild(row);
+  });
+}
+
+function renderSmogPage() {
+  const vehiclesContainer = document.querySelector("[data-section='vehicles']");
+  const customerContainer = document.querySelector("[data-section='customer-info']");
+
+  if (vehiclesContainer) {
+    const vehicles = pageContent.vehicles || [];
+    vehiclesContainer.innerHTML = "";
+
+    vehicles.forEach((item) => {
+      const article = document.createElement("article");
+      article.className = "card reveal";
+
+      const title = document.createElement("h3");
+      title.textContent = item.title;
+
+      const text = document.createElement("p");
+      text.textContent = item.description;
+
+      article.appendChild(title);
+      article.appendChild(text);
+      vehiclesContainer.appendChild(article);
+      observeRevealItem(article);
     });
   }
 
-  if (cardsContainer) {
-    cardsContainer.innerHTML = "";
-    cards.forEach((item) => {
+  if (customerContainer) {
+    const infoCards = pageContent.customerInfo || [];
+    customerContainer.innerHTML = "";
+
+    infoCards.forEach((item) => {
       const article = document.createElement("article");
       article.className = "card reveal";
 
@@ -199,13 +397,70 @@ function renderAboutPage() {
 
       article.appendChild(title);
       article.appendChild(text);
-      cardsContainer.appendChild(article);
-      observer.observe(article);
+      article.appendChild(createActionElement(item.url, item.label, "More Info"));
+      customerContainer.appendChild(article);
+      observeRevealItem(article);
     });
   }
 }
 
+function renderDonationPage() {
+  const infoContainer = document.querySelector("[data-section='donation-info']");
+  if (!infoContainer) {
+    return;
+  }
+
+  const cards = pageContent.infoCards || [];
+  infoContainer.innerHTML = "";
+
+  cards.forEach((item) => {
+    const article = document.createElement("article");
+    article.className = "card reveal";
+
+    const title = document.createElement("h3");
+    title.textContent = item.title;
+
+    const text = document.createElement("p");
+    text.textContent = item.text;
+
+    article.appendChild(title);
+    article.appendChild(text);
+    infoContainer.appendChild(article);
+    observeRevealItem(article);
+  });
+}
+
+function dispatchPageRenderer() {
+  const page = document.body.getAttribute("data-page");
+
+  switch (page) {
+    case "home":
+      renderHomeRepositories();
+      renderHomePage();
+      break;
+    case "about":
+      renderAboutPage();
+      break;
+    case "shop":
+      renderShopPage();
+      break;
+    case "homes":
+      renderHomesPage();
+      break;
+    case "smog":
+      renderSmogPage();
+      break;
+    case "donation":
+      renderDonationPage();
+      break;
+    default:
+      renderHomeRepositories();
+      break;
+  }
+}
+
 applyTextContent();
-renderHomeRepositories();
+applyPageTextContent();
+renderPanelItems();
 renderFooterIcons();
-renderAboutPage();
+dispatchPageRenderer();

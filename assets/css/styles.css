@@ -199,6 +199,11 @@ section {
   pointer-events: none;
 }
 
+.grid > .card:only-child {
+  grid-column: 1 / -1;
+  max-width: 480px;
+}
+
 .kicker {
   margin: 0 0 10px;
   color: var(--accent);

@@ -12,27 +12,5 @@ window.PAGE_CONTENT = {
     ],
   },
   listingsTitle: "Current Listings",
-  listings: [
-    {
-      address: "None Currently",
-      price: "$000,000",
-      details: "0 Bed, 0 Bath, 0 sqft",
-      status: "Available",
-      url: "",
-    },
-    {
-      address: "None Currently",
-      price: "$000,000",
-      details: "0 Bed, 0 Bath, 0 sqft",
-      status: "Coming Soon",
-      url: "",
-    },
-    {
-      address: "None Currently",
-      price: "$000,000",
-      details: "0 Bed, 0 Bath, 0 sqft",
-      status: "Sold",
-      url: "",
-    },
-  ],
+  listings: [],
 };

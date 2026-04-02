@@ -12,24 +12,5 @@ window.PAGE_CONTENT = {
     ],
   },
   productsTitle: "Products and Services",
-  products: [
-    {
-      name: "Product tbd",
-      price: "$0.00",
-      description: "Currently nothing.",
-      url: "",
-    },
-    {
-      name: "Product tbd",
-      price: "$0.00",
-      description: "Nothing to add currently.",
-      url: "",
-    },
-    {
-      name: "Service Package tbd",
-      price: "$0.00",
-      description: "Unavailable currently.",
-      url: "",
-    },
-  ],
+  products: [],
 };

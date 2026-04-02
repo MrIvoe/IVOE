@@ -7,9 +7,9 @@ window.PAGE_CONTENT = {
     panelTitle: "Service Details",
     panelItems: [
       "Business name: EcoSMOG Solutions.",
-      "Address: Add your service location.",
-      "Hours: 8am - 4pm.",
-      "Phone: Add your best contact number.",
+      "Location: Hesperia, California.",
+      "Hours: 8am to 4pm.",
+      "Phone: Contact info coming soon.",
     ],
   },
   vehiclesTitle: "Vehicles Accepted",
