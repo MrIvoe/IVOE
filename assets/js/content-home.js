@@ -41,7 +41,7 @@ window.PAGE_CONTENT = {
     },
     {
       title: "Smog Services",
-      description: "Smog inspection location, vehicles accepted, and booking.",
+      description: "Smog inspection location, vehicles accepted.",
       url: "smog.html",
       label: "Open Smog",
     },

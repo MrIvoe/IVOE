@@ -14,21 +14,21 @@ window.PAGE_CONTENT = {
   productsTitle: "Products and Services",
   products: [
     {
-      name: "Product One",
+      name: "Product tbd",
       price: "$0.00",
-      description: "Add details and customer benefits for this listing.",
+      description: "Currently nothing.",
       url: "",
     },
     {
-      name: "Product Two",
+      name: "Product tbd",
       price: "$0.00",
-      description: "Add details and customer benefits for this listing.",
+      description: "Nothing to add currently.",
       url: "",
     },
     {
-      name: "Service Package",
+      name: "Service Package tbd",
       price: "$0.00",
-      description: "Add service scope, turnaround time, and deliverables.",
+      description: "Unavailable currently.",
       url: "",
     },
   ],
